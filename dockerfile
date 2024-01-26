@@ -4,6 +4,6 @@ FROM burntnetwork/xion:sha-bff90b4
 
 COPY  xion-testnet-1-setup.sh .
 
-RUN chmod -x xion-testnet-1-setup
-
-CMD bash ./xion-testnet-1-setup
+CMD xiond init testnet-node-1 \
+    --chain-id xion-testnet-1 \
+    && bash ./xion-testnet-1-setup
